@@ -1,0 +1,130 @@
+@use 'sass:math';
+@use 'sass:map';
+
+$conf_shadow_color: #000;
+
+// 状态色
+$conf_state_color: (
+  "primary": (
+    "default": #5B8DEF,
+    "bg": #5B8DEF,
+    "hover": var(--primary-dark-1),
+    "active": var(--primary-light-1),
+    "light": var(--primary-light-5),
+  ),
+  "success": (
+    "default": #39D98A,
+    "bg": #39D98A,
+    "hover": var(--success-dark-1),
+    "active": var(--success-light-1),
+    "light": var(--success-light-5),
+  ),
+  "danger": (
+    "default": #FF5C5C,
+    "bg": #FF5C5C,
+    "hover": var(--danger-dark-1),
+    "active": var(--danger-light-1),
+    "light": var(--danger-light-5),
+  ),
+  "warning": (
+    "default": #FDAC42,
+    "bg": #FDAC42,
+    "hover": var(--warning-dark-1),
+    "active": var(--warning-light-1),
+    "light": var(--warning-light-5),
+  ),
+  "info": (
+    "default": #73DFE7,
+    "bg": #73DFE7,
+    "hover": var(--info-dark-1),
+    "active": var(--info-light-1),
+    "light": var(--info-light-5),
+  ),
+);
+
+// 品牌辅色
+$conf_brand_color: (
+);
+
+// 背景色
+$conf_bg_color: (
+  "body": #212121, // 主体背景 (主体)
+  "content": #262626, // 内容区背景 (内容区)
+  "light": rgba(#FFFFFF, 0.03), // 淡色背景 (用于展示一个范围)
+  "popup": #1a1a1a, // 弹窗背景 (浮层、弹窗等)
+  "element": rgba(#FFFFFF, 0.04), // 组件元素背景
+  "hover": rgba(#FFFFFF, 0.06), // 悬停背景
+  "active": rgba(#FFFFFF, 0.08), // 激活背景
+  "header": rgba(#000000, 0.12), // 标题背景
+  "backdrop": rgba(#181818, 0.88), // 背景幕布
+);
+
+// 文本色
+$conf_font_color: (
+  "regular": rgba(#FFFFFF, 0.64), // 常用
+  "secondary": rgba(#FFFFFF, 0.32), // 次要
+  "light": rgba(#FFFFFF, 0.24), // 淡色、禁用色
+  "lightest": rgba(#FFFFFF, 0.12), // 淡色/超淡色
+  "title": rgba(#FFFFFF, 0.72), // 标题
+  "link": var(--primary), // 链接
+  "hover": var(--primary), // 悬停
+  "active": var(--primary), // 激活
+  "inverse": #FFFFFF, // 反色
+);
+
+// 边框颜色
+$conf_border_color: (
+  "regular": rgba(#000000, 0.32), // 默认
+  "light": rgba(#000000, 0.2), // 淡色
+  "dark": rgba(#FFFFFF, 0.1), // 深色
+  "deepdark": #DCDEE8 // 特深
+);
+
+// 阴影样式
+$conf_box_shadow: (
+  "sm": (0 2px 4px 0) rgba(var(--shadow-color, 0, 0, 0), 0.06),
+  "md": (0 4px 12px 0) rgba(var(--shadow-color, 0, 0, 0), 0.2),
+  "lg": (0 6px 16px) rgba(var(--shadow-color, 0, 0, 0), 0.32),
+  "xl": '0px 4px 4px 0px rgba(18, 18, 18, 0.64), 0px 12px 20px 0px rgba(18, 18, 18, 0.4)',
+);
+
+// 滤镜阴影样式
+$conf_drop_shadow: (
+  "sm": 0 5px 4px rgba(var(--shadow-color, 62, 78, 106), 0.3),
+  "md": 0 10px 8px rgba(var(--shadow-color, 62, 78, 106), 0.4),
+  "lg": 0 15px 8px rgba(var(--shadow-color, 62, 78, 106), 0.45),
+  "xl": 0 20px 8px rgba(var(--shadow-color, 62, 78, 106), 0.5),
+);
+
+// 渐进色 (用于输出颜色的Light和Dark渐进值)
+$conf_progressive: (
+  "dark-5": ("h": 0deg, "s": 0%, "l": 92%),
+  "dark-4": ("h": 0deg,  "s": 0%, "l": 80%),
+  "dark-3": ("h": 0deg,  "s": 0%, "l": 68%),
+  "dark-2": ("h": 0deg,  "s": 0%, "l": 56%),
+  "dark-1": ("h": 0deg,  "s": 0%, "l": 30%),
+  "light-1":  ("h": 0deg, "s": -16%, "l": -15%),
+  "light-2":  ("h": 0deg, "s": -32%, "l": -30%),
+  "light-3":  ("h": 0deg, "s": -48%, "l": -45%),
+  "light-4":  ("h": 0deg, "s": -64%, "l": -60%),
+  "light-5":  ("h": 0deg, "s": -80%, "l": -72%),
+);
+
+// 公共颜色样式
+$conf_public_color: (
+  "bg-color": var(--bg-element), // 通用表单元素背景
+  "bg-color-fill": var(--bg-element), // 通用表单元素背景
+  "border-color": rgba(#FFFFFF, 0.12), // 默认边框颜色
+  "disabled-font-color": var(--text-light), // 禁用状态文本色
+  "disabled-border-color": rgba(#FFFFFF, 0.12), // 禁用状态边框色
+  "disabled-bg-color": var(--bg-element), // 禁用状态背景色
+  "button-font-color": var(--text-regular), // 文本颜色 (默认)
+  "button-font-color-hover": var(--text-inverse), // 文本颜色 (悬停)
+  "button-font-color-active": var(--text-inverse), // 文本颜色 (激活)
+  "button-border-color": transparent, // 边框颜色 (默认)
+  "button-border-color-hover": transparent, // 边框颜色 (悬停)
+  "button-border-color-active": transparent, // 边框颜色 (激活)
+  "button-bg-color": var(--bg-element), // 背景颜色 (默认)
+  "button-bg-color-hover": rgba(#FFFFFF, 0.08), // 背景颜色 (悬停)
+  "button-bg-color-active": rgba(#FFFFFF, 0.04), // 背景颜色 (激活)
+);

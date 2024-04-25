@@ -1,0 +1,34 @@
+@use "sass:math";
+@use "sass:map";
+
+//--定义公共路径
+$fontPath: "../font/";
+$ornamentPath: "https://pic.uetop.com/ornament/";
+
+//+----------------------------------------------------------------------
+// 引入Nova Config 全局配置文件
+//+----------------------------------------------------------------------
+@import '../../../node_modules/nova-design/theme/scss/common/config';
+
+$conf_public: (
+  "rem-radix": 16px, // 尺寸基数 (用于输出rem单位)
+  "font-family" : (Helvetica Neue,Roboto,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji),
+  "font-size": 100%, // 文本尺寸（使用vw或者vh来控制全局比例缩放）
+  "font-weight": 400, // 文本字重 (默认)
+  "font-weight-bold": 600, // 文本字重 (粗体)
+  "font-weight-heading": 500, // 标题字重
+  "border-style": solid, // 边框样式
+  "border-width": 1px, // 边框尺寸
+  "duration": 0.3s, // 公共动画持续时间
+  "timing": ease, // 公共动画曲线
+  "grid-model": 24, // 栅格模型（24栅格）
+);
+
+
+//+----------------------------------------------------------------------
+// 组件引导文件
+// 注意它必须在config的后面引入。因为它在样式生成时要读取上面的配置文件
+//+----------------------------------------------------------------------
+@import '../../../node_modules/nova-design/theme/scss/components';
+
+
