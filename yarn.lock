@@ -539,10 +539,10 @@ normalize-wheel-es@^1.2.0:
   resolved "https://registry.yarnpkg.com/normalize-wheel-es/-/normalize-wheel-es-1.2.0.tgz#0fa2593d619f7245a541652619105ab076acf09e"
   integrity sha512-Wj7+EJQ8mSuXr2iWfnujrimU35R2W4FAErEyTmJoJ7ucwTn2hOUSsRehMb5RSYkxXGTM7Y9QpvPmp++w5ftoJw==
 
-nova-design@^2.5.6:
-  version "2.5.6"
-  resolved "https://registry.yarnpkg.com/nova-design/-/nova-design-2.5.6.tgz#14e92063cf90847187e9281b979bb6cf278549cb"
-  integrity sha512-9Wy1Cyckp3Bw3SE5wWHfvuErVmlDUFdkpCO7zwiRASF0OfIiDmipG40mx9x+E4tIDC1tBrCfIxyLfBo0Qb43Xw==
+nova-design@^2.5.10:
+  version "2.5.10"
+  resolved "https://registry.yarnpkg.com/nova-design/-/nova-design-2.5.10.tgz#872d466f02161ff0d9dd649f4dca24b8329aa67d"
+  integrity sha512-3Dd4EtIrWuqdzDII8A2pcTEND9aV347IEejNY2P+CbIs7OfQDx0s3N9KE4QnWMmdtMJpFLixLbFCKVYczWdhwA==
   dependencies:
     "@floating-ui/dom" "^1.0.1"
     "@popperjs/core" "npm:@sxzz/popperjs-es@^2.11.7"

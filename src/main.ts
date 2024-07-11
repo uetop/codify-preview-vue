@@ -4,6 +4,7 @@ import NovaDesign from 'nova-design';
 import '../src/assets/styles/index.scss'
 import * as svgIcons from '@nova-design/icons'
 import '@nova-design/icons/dist/index.css'
+import en from 'nova-design/es/locale/lang/en'
 
 import {
   SysHome,
@@ -117,5 +118,7 @@ Object.keys(SystemIcons).forEach(key => {
   app.component(key, SystemIcons[key])
 })
 
-app.use(NovaDesign)
+app.use(NovaDesign, {
+  locale: en,
+})
 app.mount('#app')
